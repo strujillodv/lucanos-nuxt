@@ -1,8 +1,8 @@
 ---
 title: Como empezar
 description: 'Crea un post usando markdown y Nuxt con todo lo que sabes y deseas usando lo que aprendiste en VUE'
+image: https://cdn.vuetifyjs.com/images/cards/sunshine.jpg
 published: true
-
 ---
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.

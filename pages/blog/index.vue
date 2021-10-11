@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'Posts',
-  async asyncData({ app, error }) {
+  async asyncData({ app, error, commit }) {
     const posts = await app.$content(app.i18n.locale + '/blog')
       .where({
         published: true
@@ -16,6 +16,7 @@ export default {
       .catch(() => {
         error({ statusCode: 404, message: 'Página no encontrada' })
       })
+
     return {
       posts: posts.map((post) => ({
       ...post,

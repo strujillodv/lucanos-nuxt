@@ -109,7 +109,7 @@ export default {
   generate: {
     async routes () {
       const { $content } = require('@nuxt/content')
-      const files = await $content('posts')
+      const files = await $content('es/blog')
         .only(['path'])
         .fetch()
 
