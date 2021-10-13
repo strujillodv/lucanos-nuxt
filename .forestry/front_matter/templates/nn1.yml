@@ -2,3 +2,5 @@
 label: nn1
 hide_body: false
 fields: []
+pages:
+- blog/es/new.md
