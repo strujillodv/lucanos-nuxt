@@ -6,39 +6,39 @@ en:
 </i18n>
 <template lang="pug">
   v-hover(
-      v-slot="{ hover }"
+    v-slot="{ hover }"
+  )
+    v-card.transitions.ma-2.pt-0(
+      :elevation="hover ? 6 : 0"
+      nuxt
+      :to="post.path"
     )
-      v-card.transitions(
-        v-for="(post, index) in posts"
-        :key="index"
-        :elevation="hover ? 6 : 0"
-        nuxt
-        :to="post.path"
+      v-img(
+        :src="post.image"
+        height="150px"
       )
-        v-img(
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-          height="150px"
-        )
-        v-container
-          v-card-title(
-            class="truncate-overflow title-truncate pa-0 mb-4"
-          ) {{post.title}}
-          v-card-subtitle(
-            class="truncate-overflow pa-0"
-          ) {{post.description}}
-        v-card-actions.justify-center
-          nuxt-link(
-            :to="post.path"
-          ) {{$t('read-more')}}
+      v-container
+        v-card-title(
+          style="word-break: normal;"
+          class="truncate-overflow title-truncate pa-0 mb-4"
+        ) {{post.title}}
+        v-card-subtitle(
+          style="word-break: normal;"
+          class="truncate-overflow pa-0"
+        ) {{post.description}}
+      v-card-actions.justify-center
+        nuxt-link(
+          :to="post.path"
+        ) {{$t('read-more')}}
 </template>
 <script>
 export default {
   name: 'CardPost',
   props: {
-    posts: {
-      type: Array,
+    post: {
+      type: Object,
       default() {
-        return []
+        return {}
       },
       require: true
     }
