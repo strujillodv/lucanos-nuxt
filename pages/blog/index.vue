@@ -1,8 +1,11 @@
 <template lang="pug">
-  section.post-container
-    CardPost(
-      :posts="posts"
-    )
+  v-container
+    section.post-container
+      CardPost(
+        v-for="(post, index) in posts"
+        :key="index"
+        :post="post"
+      )
 </template>
 <script>
 export default {
@@ -23,11 +26,7 @@ export default {
       path: post.path.replace('/es', ''),
     }))
     }
-  },
-  data: () => ({
-    post: {}
-  }),
-
+  }
 }
 </script>
 <style>
