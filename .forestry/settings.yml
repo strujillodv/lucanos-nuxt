@@ -9,13 +9,13 @@ sections:
   label: blog
   create: all
   match: "**/*"
-  new_doc_ext: ".md"
+  new_doc_ext: md
 - type: heading
   label: header
 - type: heading
   label: sidebar
-upload_dir: uploads
-public_path: "/uploads"
+upload_dir: static/images
+public_path: "/static/images"
 front_matter_path: ''
 use_front_matter_path: true
 file_template: ":filename:"
