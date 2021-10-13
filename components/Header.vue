@@ -5,6 +5,7 @@
       app
       hide-on-scroll
       flat
+      fixed
       )
       nuxt-link( :to="(this.$i18n.locale === 'es') ? '/' : '/' + this.$i18n.locale")
         v-img(
@@ -26,16 +27,16 @@
           :to="'/'+ item.link"
           ) {{ item.name }}
 
-      v-btn(
-        text
-        v-for="locale in availableLocales"
-        :key="locale.code"
-        nuxt
-        :to="switchLocalePath(locale.code)"
-      ) {{ locale.name }}
+      //- v-btn(
+      //-   text
+      //-   v-for="locale in availableLocales"
+      //-   :key="locale.code"
+      //-   nuxt
+      //-   :to="switchLocalePath(locale.code)"
+      //- ) {{ locale.name }}
 
-      v-btn(icon)
-        v-icon mdi-magnify
+      //- v-btn(icon)
+      //-   v-icon mdi-magnify
 </template>
 <script>
 export default {

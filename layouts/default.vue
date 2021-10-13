@@ -40,14 +40,45 @@ en:
       :menu="$t('menu')"
     )
     v-main
-      v-container
+      v-container.pa-0(
+        fluid
+      )
         Nuxt
+    v-footer.mb-14.mb-md-0(
+      class="grey darken-4 white--text"
+    )
+      v-card(
+        flat
+        tile
+        width="100%"
+        class="grey darken-4 text-center"
+      )
+        v-card-text
+          v-btn(
+            class="mx-4"
+            icon
+          )
+            v-icon
+
+        v-divider
+
+        v-card-text( class="white--text")
+          | {{ new Date().getFullYear() }} — <strong>LuCanos</strong>
+
     BottomNav(
       :menu="$t('menu')"
     )
+
 </template>
 <script>
 export default {
-  scrollToTop: true
+  scrollToTop: true,
+  head () {
+    return {
+      htmlAttrs: {
+        lang: this.$i18n.locale,
+      }
+    }
+  }
 }
 </script>
