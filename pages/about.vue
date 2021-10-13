@@ -58,11 +58,10 @@
             max-width="280"
           )
             v-avatar(
-              color="indigo"
               size="200"
             )
               img.img-edwin.mx-auto(
-                src="/img/edwin-cano2.png"
+                src="/img/edwin-cano2.webp"
               )
             v-card-title.justify-center
               | Edwin Cano
@@ -100,7 +99,7 @@
             )
               img.img-edwin.mx-auto(
                 style="object-fit: cover;"
-                src="/img/olgalu.jpeg"
+                src="/img/olgalu.webp"
               )
             v-card-title.justify-center
               | Lucia Hernández
@@ -132,7 +131,7 @@
             )
               img.img-edwin.mx-auto(
                 style="object-fit: cover;"
-                src="/img/Sergio-trujillo.jpg"
+                src="/img/Sergio-trujillo.webp"
               )
             v-card-title.justify-center
               | Sergio Trujillo
