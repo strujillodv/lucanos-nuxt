@@ -1,4 +1,16 @@
 ---
 label: nn1
 hide_body: false
-fields: []
+fields:
+- name: hey
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: hey
+  description: csadasdasd
+pages:
+- blog/es/new.md
