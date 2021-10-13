@@ -4,6 +4,14 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
+- type: directory
+  path: blog/es
+  label: blog
+  create: all
+  match: "**/*"
+  new_doc_ext: ".md"
+- type: heading
+  label: header
 - type: heading
   label: sidebar
 upload_dir: uploads
