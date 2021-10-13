@@ -14,8 +14,8 @@ sections:
   label: header
 - type: heading
   label: sidebar
-upload_dir: static/images
-public_path: "/static/images"
+upload_dir: static/img
+public_path: "/static/img"
 front_matter_path: ''
 use_front_matter_path: true
 file_template: ":filename:"
