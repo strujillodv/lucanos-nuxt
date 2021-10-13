@@ -2,7 +2,7 @@
   section
     v-parallax(
       tag="header"
-      src="/img/services.jpg"
+      src="/img/services.webp"
       height="400"
     )
       div.continer-hero

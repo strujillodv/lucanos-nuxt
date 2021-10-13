@@ -26,7 +26,7 @@ en:
   section
     v-parallax(
       tag="header"
-      src="https://lucanos.co/wp-content/uploads/2021/08/network-3418742_1280.jpg"
+      src="/img/network.webp"
     )
       div.continer-hero
       v-row(

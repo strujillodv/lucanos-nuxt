@@ -2,7 +2,7 @@
   section
     v-parallax(
       tag="header"
-      src="https://lucanos.co/wp-content/uploads/2021/08/workspace.jpg"
+      src="img/about.webp"
       height="400"
     )
       div.continer-hero
