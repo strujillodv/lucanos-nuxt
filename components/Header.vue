@@ -27,13 +27,13 @@
           :to="'/'+ item.link"
           ) {{ item.name }}
 
-      //- v-btn(
-      //-   text
-      //-   v-for="locale in availableLocales"
-      //-   :key="locale.code"
-      //-   nuxt
-      //-   :to="switchLocalePath(locale.code)"
-      //- ) {{ locale.name }}
+      v-btn(
+        text
+        v-for="locale in availableLocales"
+        :key="locale.code"
+        nuxt
+        :to="switchLocalePath(locale.code)"
+      ) {{ locale.name }}
 
       //- v-btn(icon)
       //-   v-icon mdi-magnify
