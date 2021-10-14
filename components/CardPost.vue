@@ -12,6 +12,7 @@ en:
       :elevation="hover ? 6 : 0"
       nuxt
       :to="post.path"
+      max-width="280"
     )
       v-img(
         :src="post.image"
