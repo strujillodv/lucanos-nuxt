@@ -1,5 +1,5 @@
 ---
-title: 🏢 tokeniza-activos
+title: 🏢 Tokeniza Activos
 description: La mayoría de blockchain están diseñados como bases de datos descentralizados que funciona como libros contables que se organizan en una secuencia cronológica y se vinculan mediante pruebas criptográficas
 image: https://lucanos.co/wp-content/uploads/2021/10/2-1536x1024.jpg
 published: true

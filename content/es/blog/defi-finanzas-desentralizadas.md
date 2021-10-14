@@ -15,4 +15,4 @@ El funcionamiento es simple, como ya expliqué existen dos participantes en este
 Es muy parecido a cuando una persona deja un inmueble propio en garantía por un crédito que oscila entre el 60 y 70% del valor del inmueble. En el ejemplo anterior el Bitcoin sería el inmueble.
 La siguiente grafica explica el ciclo de la operación.
 
-![Defi](https://lucanos.co/wp-content/uploads/2021/10/Captura-de-pantalla-de-2021-10-12-22-47-03.png)
+![Defi](/img/blog/defi-1.webp)
