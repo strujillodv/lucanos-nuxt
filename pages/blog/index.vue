@@ -15,6 +15,7 @@ export default {
       .where({
         published: true
       })
+      .sortBy('date', 'asc')
       .fetch()
       .catch(() => {
         error({ statusCode: 404, message: 'Página no encontrada' })
