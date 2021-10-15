@@ -205,7 +205,7 @@ en:
         v-col.my-4.align-self-center(
           class="col-12 col-sm-6"
         )
-          v-card(outlined)
+          v-card(flat)
             v-card-title(
               class="text-h4 text-md-h3"
             )
@@ -276,7 +276,7 @@ export default {
       .where({
         published: true
       })
-      .sortBy('date', 'asc')
+      .sortBy('createdAt', 'desc')
       .limit(6)
       .fetch()
       .catch(() => {
@@ -286,7 +286,7 @@ export default {
     return {
       posts: posts.map((post) => ({
       ...post,
-      path: post.path.replace('/es', ''),
+      path: post.path.replace('/es', '')
     }))
     }
   },

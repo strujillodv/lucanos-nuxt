@@ -64,6 +64,7 @@ en:
             span(
               :class="[ n.price_change_percentage_24h > 0 ? 'red--text' : 'green--text']"
             ) &nbsp;{{n.price_change_percentage_24h}}%
+
         Nuxt
 
     //- End Container
@@ -136,7 +137,7 @@ en:
         color="teal"
         rel="noreferrer"
         target="_blank"
-        href="https://api.whatsapp.com/send?phone=3002911600"
+        href="https://api.whatsapp.com/send?phone=573002911600&text=Me%20interesa%20conocer%20sobre..."
       )
         v-icon mdi-whatsapp
 
@@ -156,12 +157,12 @@ export default {
       }
     }
   },
-  async mounted() {
-    const res = await fetch(
-      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-    );
-    const data = await res.json();
-    this.coins = data;
+  created() {
+    this.$axios
+      .get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false')
+      .then((res) =>{
+        this.coins = res.data;
+      })
   }
 }
 </script>
