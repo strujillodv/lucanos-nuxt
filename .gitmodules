@@ -1,0 +1,3 @@
+[submodule "deploy-lucanos"]
+	path = deploy-lucanos
+	url = https://github.com/strujillodv/deploy-lucanos
