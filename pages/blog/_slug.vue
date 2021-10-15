@@ -2,8 +2,11 @@
   v-row( justify="center")
     v-col( cols="12" sm="10" md="7")
       header
-        h1.display-2.mb-4 {{post.title}}
-      nuxt-content(:document="post")
+        v-img.my-4(
+          :src="post.image"
+        )
+        h1.display-2.my-10 {{post.title}}
+      nuxt-content.my-4(:document="post")
 </template>
 <script>
 export default {
@@ -41,12 +44,12 @@ export default {
         {
           hid: "og:url",
           property: "og:url",
-          content: `https://bobross.com/articles/${this.$route.params.slug}`,
+          content: `https://lucanos/blog/${this.$route.params.slug}`,
         },
         {
           hid: "twitter:url",
           name: "twitter:url",
-          content: `https://bobross.com/articles/${this.$route.params.slug}`,
+          content: `https://lucanos/blog/${this.$route.params.slug}`,
         },
         {
           hid: "twitter:title",
@@ -92,7 +95,7 @@ export default {
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://bobross.com/articles/${this.$route.params.slug}`,
+          href: `https://lucanos/blog/${this.$route.params.slug}`,
         },
       ],
     };

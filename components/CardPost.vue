@@ -20,13 +20,15 @@ en:
       )
       v-container
         v-card-title(
-          style="word-break: normal;"
           class="truncate-overflow title-truncate pa-0 mb-4"
         ) {{post.title}}
         v-card-subtitle(
-          style="word-break: normal;"
           class="truncate-overflow pa-0"
-        ) {{post.description}}
+        )
+          | {{post.description}}
+          //- span {{post.createdAt}}
+          //- br
+          //- span {{post.updatedAt}}
       v-card-actions.justify-center
         nuxt-link(
           :to="post.path"
@@ -48,6 +50,7 @@ export default {
 </script>
 <style>
   .truncate-overflow {
+    word-break: normal;
     display: block;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -57,6 +60,7 @@ export default {
   }
   .title-truncate {
     -webkit-line-clamp: 2;
+    min-height: 64px;
   }
   .transitions {
     transition: all .25s ease;
