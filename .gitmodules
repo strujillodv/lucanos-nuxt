@@ -1,0 +1,3 @@
+[submodule "hostinger"]
+	path = hostinger
+	url = https://github.com/strujillodv/deploy-lucanos
