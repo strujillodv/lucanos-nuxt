@@ -45,7 +45,7 @@ en:
               class="text-center text-xs-h4 text-md-h3"
             )
               | {{$t('title-2')}}
-        v-col.my-4.align-self-center(
+        v-col.my-4.align-self-center.body-1(
           class="col-12 col-md-6"
         )
           p {{$t('p-1')}}
@@ -94,12 +94,12 @@ export default {
         {
           hid: "og:url",
           property: "og:url",
-          content: `https://lucanos.co/${this.$route.params.slug}`,
+          content: `https://lucanos.co${this.$route.fullPath}`,
         },
         {
           hid: "twitter:url",
           name: "twitter:url",
-          content: `https://lucanos.co/${this.$route.params.slug}`,
+          content: `https://lucanos.co${this.$route.fullPath}`,
         },
         {
           hid: "twitter:title",
@@ -126,7 +126,7 @@ export default {
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://lucanos.co/${this.$route.params.slug}`,
+          href: `https://lucanos.co${this.$route.fullPath}`,
         },
       ],
     };
