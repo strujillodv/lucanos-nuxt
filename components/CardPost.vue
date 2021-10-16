@@ -1,8 +1,10 @@
 <i18n lang="yaml">
 es:
   read-more: "Leer Más"
+  posted-on: "Publicado el"
 en:
   read-more: "Read More"
+  posted-on: "Posted-on"
 </i18n>
 <template lang="pug">
   v-hover(
@@ -25,10 +27,9 @@ en:
         v-card-subtitle(
           class="truncate-overflow pa-0"
         )
+          span.text--secondary {{$t('posted-on')}} {{ new Date(post.createdAt).toLocaleDateString()}}
+          br
           | {{post.description}}
-          //- span {{post.createdAt}}
-          //- br
-          //- span {{post.updatedAt}}
       v-card-actions.justify-center
         nuxt-link(
           :to="post.path"
