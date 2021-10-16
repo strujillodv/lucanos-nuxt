@@ -82,6 +82,10 @@ export default {
       about: {
         es: '/acerca',
         en: '/about'
+      },
+      market: {
+        es: '/market',
+        en: '/market'
       }
     }
   },
