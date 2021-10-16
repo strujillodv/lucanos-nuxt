@@ -1,3 +1,9 @@
+<i18n lang="yaml">
+es:
+  posted-on: "Publicado el"
+en:
+  posted-on: "Posted-on"
+</i18n>
 <template lang="pug">
   v-row( justify="center")
     v-col( cols="12" sm="10" md="7")
@@ -6,7 +12,8 @@
           :src="post.image"
         )
         h1.display-2.my-10 {{post.title}}
-      nuxt-content.my-4(:document="post")
+      h2.text-subtitle-1.text--secondary {{$t('posted-on')}} {{ new Date(post.createdAt).toLocaleDateString()}}
+      nuxt-content.my-4.body-1(:document="post")
 </template>
 <script>
 export default {
