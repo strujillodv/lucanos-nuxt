@@ -1,7 +1,7 @@
 ---
 title: 💸 Defi - Finanzas descentralizadas
 description: En todo el ecosistema cripto, existen diferentes usos para muchas soluciones blockchain que están creadas y otras que vienen en camino, algunos ejemplos son los video juegos, NFT, cadenas de suministro, Defi.
-image: https://cdn.pixabay.com/photo/2020/08/23/19/12/ethereum-5511808_960_720.jpg
+image: /img/blog/defi-blog.webp
 published: true
 ---
 

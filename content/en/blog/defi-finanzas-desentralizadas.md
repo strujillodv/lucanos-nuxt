@@ -1,7 +1,7 @@
 ---
 title: 💸 Defi - Decentralized Finance
 description: Throughout the crypto ecosystem, there are different uses for many blockchain solutions that are created and others that are on the way, some examples are video games, NFT, supply chains, Defi.
-image: https://cdn.pixabay.com/photo/2020/08/23/19/12/ethereum-5511808_960_720.jpg
+image: /img/blog/defi-blog.webp
 published: true
 ---
 Throughout the crypto ecosystem, there are different uses for many blockchain solutions that are created and others that are on the way, some examples are video games, NFT, supply chains, Defi.

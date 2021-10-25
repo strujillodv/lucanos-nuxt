@@ -1,7 +1,7 @@
 ---
 title: 🎮 NTF y GamesPlay to Earn
 description: Games have always been accompanied by different technological advances, an example of this we have with the classic Pong that emerged in the 70s which was inspired by table tennis and became one of the first that covered a great popularity in early video game consoles; This game gave infinite fun to the first gamers and gave the initial step for the take-off of the industry.
-image: https://lucanos.co/wp-content/uploads/2021/10/videogamer-winning-first-person-shooter-tournament-using-rgb-keyboard-and-professional-headphones-pro-player-man-talking-with-other-players-online-for-game-competition-on-powerful-computer-1536x864.jpg
+image: /img/blog/videogamer.webp
 published: true
 ---
 Games have always been accompanied by different technological advances, an example of this we have with the classic Pong that emerged in the 70s which was inspired by table tennis and became one of the first that covered a great popularity in early video game consoles; This game gave infinite fun to the first gamers and gave the initial step for the take-off of the industry.

@@ -1,7 +1,7 @@
 ---
 title: 🎮 NTF y Juegos Play to Earn
 description: Desde siempre los juegos han estado acompañados por los diferentes adelantos tecnológicos, un ejemplo de ello lo tenemos con el clásico Pong que surgió en en los años 70 el cual fue inspirado en el Tennis de mesa y llegó a ser de los primeros que abarcó una gran popularidad en las primitivas consolas de videojuegos; este juego dio infinidad de diversión a los primeros gamers y dio el paso inicial para el despegue de la industria.
-image: https://lucanos.co/wp-content/uploads/2021/10/videogamer-winning-first-person-shooter-tournament-using-rgb-keyboard-and-professional-headphones-pro-player-man-talking-with-other-players-online-for-game-competition-on-powerful-computer-1536x864.jpg
+image: /img/blog/videogamer.webp
 published: true
 ---
 Desde siempre los juegos han estado acompañados por los diferentes adelantos tecnológicos, un ejemplo de ello lo tenemos con el clásico Pong que surgió en en los años 70 el cual fue inspirado en el Tennis de mesa y llegó a ser de los primeros que abarcó una gran popularidad en las primitivas consolas de videojuegos; este juego dio infinidad de diversión a los primeros gamers y dio el paso inicial para el despegue de la industria.

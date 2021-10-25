@@ -1,7 +1,7 @@
 ---
 title: 🏫 Real estate tokenization
 description: Real estate has always been considered a safe investment. The problem is that, in recent decades, it has become increasingly difficult for the average retail investor to obtain. The barrier to entry has become excessively high because wages have not increased at the same rate as real estate values.
-image: https://lucanos.co/wp-content/uploads/2021/10/1.jpg
+image: /img/blog/view-business-team.webp
 published: true
 ---
 

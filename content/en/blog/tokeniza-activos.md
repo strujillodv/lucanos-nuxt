@@ -1,7 +1,7 @@
 ---
 title: 🏢 Tokeniza Assets
 description: Most blockchains are designed as decentralized databases that function like ledgers that are organized in a chronological sequence and linked by cryptographic evidence.
-image: https://lucanos.co/wp-content/uploads/2021/10/2-1536x1024.jpg
+image: /img/blog/digital-increasing.webp
 published: true
 ---
 Most blockchains are designed as decentralized databases that function like ledgers that are organized in a chronological sequence and linked by cryptographic evidence.
