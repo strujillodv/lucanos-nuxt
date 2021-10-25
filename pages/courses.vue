@@ -1,4 +1,4 @@
 <template lang="pug">
-  v-container
+  section
     siteConstruction
 </template>
