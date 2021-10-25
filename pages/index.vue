@@ -94,7 +94,6 @@ en:
     //- Section Services
     v-container
       v-row(
-        no-gutters
         aling="center"
       )
         v-col.my-4(
@@ -112,7 +111,7 @@ en:
         )
           v-card.mx-auto.text-center(
             elevation="2"
-            max-width="280"
+            min-height="290"
           )
             lottie-vue-player.mx-auto(
               style="max-width: 200px; height: 157px"
@@ -176,7 +175,10 @@ en:
           v-col.my-4.mx-auto(
             class="col-11 col-sm-7"
           )
-            <iframe style="width: 100%;" height="400" src="https://www.youtube.com/embed/JMf083F53sU" title="YouTube video player" allowfullscreen></iframe>
+            youtube(
+              width="100%"
+              video-id="JMf083F53sU"
+            )
     //- End Video 1
 
     //- Coachin
@@ -254,7 +256,10 @@ en:
           v-col.my-4.mx-auto(
             class="col-11 col-sm-7"
           )
-            <iframe style="width: 100%;" height="400" src="https://www.youtube.com/embed/3Zt2zB4QzeM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            youtube(
+              width="100%"
+              video-id="3Zt2zB4QzeM"
+            )
           v-col.my-4.align-self-center(
             class="col-12 col-sm-4 white--text"
           )
@@ -266,11 +271,7 @@ en:
 
 </template>
 <script>
-import carousel from 'vue-owl-carousel'
 export default {
-  components: {
-    carousel
-  },
   async asyncData({ app, error, commit }) {
     const posts = await app.$content(app.i18n.locale + '/blog')
       .where({
