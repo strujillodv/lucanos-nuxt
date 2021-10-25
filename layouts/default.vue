@@ -2,43 +2,94 @@
 es:
   menu:
     1:
-      name: "💁 Servicios"
-      emoji: "💁"
+      name: "Servicios"
       icon: "briefcase"
       link: "servicios"
     2:
-      name: "✨ Acerca"
-      emoji: "✨"
+      name: "Acerca"
       icon: "creation"
       link: "acerca"
     3:
-      name: "💡 Blog"
-      emoji: "💡"
+      name: "Blog"
       icon: "application-edit"
       link: "blog"
+    4:
+      name: "Videos"
+      icon: "youtube"
+      link: "videos"
+    5:
+      name: "Mercado"
+      icon: "currency-btc"
+      link: "mercado"
+    6:
+      name: "Cursos"
+      icon: "school"
+      link: "cursos"
 en:
   menu:
     1:
-      name: "💁 Services"
+      name: "Services"
       emoji: "💁"
       icon: "briefcase"
       link: "en/services"
     2:
-      name: "✨ About"
+      name: "About"
       emoji: "✨"
       icon: "creation"
       link: "en/about"
     3:
-      name: "💡 Blog"
+      name: "Blog"
       emoji: "💡"
       icon: "application-edit"
       link: "en/blog"
+    4:
+      name: "Videos"
+      icon: "youtube"
+      link: "en/videos"
+    5:
+      name: "Market"
+      icon: "currency-btc"
+      link: "en/market"
+    6:
+      name: "Courses"
+      icon: "school"
+      link: "en/courses"
 </i18n>
 <template lang="pug">
   v-app
+
+    v-navigation-drawer(
+      app
+      v-model="drawer"
+      right
+    )
+      v-app-bar(
+        flat
+        color="transparent"
+      )
+        v-spacer
+        v-btn(
+          icon
+          @click="drawer=!drawer"
+        )
+          v-icon mdi-close
+      v-list
+        v-list-item-group
+          v-list-item(
+            v-for="(item, index) in $t('menu')"
+            :key="index"
+            nuxt
+            :to="'/'+  item.link"
+          )
+            v-list-item-icon
+              v-icon mdi-{{item.icon}}
+            v-list-item-content
+              v-list-item-title {{item.name}}
+
     //- Header
     Header(
       :menu="$t('menu')"
+      @click="drawerToogle"
     )
     //- End Header
 
@@ -47,24 +98,7 @@ en:
       v-container.pa-0(
         fluid
       )
-
-        v-slide-group(
-          multiple
-          show-arrows
-        )
-          v-btn(
-            v-for="(n, i) in coins"
-            :key="i"
-            text
-            small
-          )
-            v-avatar(tile size="20")
-              v-img(:src="n.image")
-            span &nbsp; {{ n.symbol }} - ${{ n.current_price }} -
-            span(
-              :class="[ n.price_change_percentage_24h > 0 ? 'red--text' : 'green--text']"
-            ) &nbsp;{{n.price_change_percentage_24h}}%
-
+        CarouselCrypto
         Nuxt
 
     //- End Container
@@ -122,9 +156,9 @@ en:
         v-card-text( class="white--text")
           | {{ new Date().getFullYear() }} — <strong>LuCanos</strong>
 
-    BottomNav(
-      :menu="$t('menu')"
-    )
+    //- BottomNav(
+    //-   :menu="$t('menu')"
+    //- )
 
     v-fab-transition
       v-btn(
@@ -147,7 +181,7 @@ export default {
   scrollToTop: true,
   data() {
     return {
-      coins: []
+      drawer: false,
     };
   },
   head () {
@@ -158,11 +192,17 @@ export default {
     }
   },
   created() {
-    this.$axios
-      .get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false')
-      .then((res) =>{
-        this.coins = res.data;
-      })
-  }
+    this.$store.dispatch('crypto/getCoins')
+    this.$store.dispatch('youtube/getVideos')
+  },
+  methods: {
+    drawerToogle(drawer) {
+      if (this.drawer) {
+        this.drawer = drawer
+      } else {
+        this.drawer = !drawer
+      }
+    }
+  },
 }
 </script>
