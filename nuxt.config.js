@@ -16,7 +16,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/faviconcopy.ico' }
     ]
   },
 
@@ -84,9 +84,13 @@ export default {
         en: '/about'
       },
       market: {
-        es: '/market',
+        es: '/mercado',
         en: '/market'
-      }
+      },
+      courses: {
+        es: '/cursos',
+        en: '/courses'
+      },
     }
   },
 
@@ -95,7 +99,13 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    icon: {
+      fileName: 'icon-lucanos.png'
+    },
     manifest: {
+      name: '',
+      display: 'standalone',
+
     }
   },
 

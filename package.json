@@ -20,7 +20,7 @@
     "nuxt": "^2.15.7",
     "nuxt-i18n": "^6.28.1",
     "vue-lottie": "^0.2.1",
-    "vue-owl-carousel": "^2.0.3",
+    "vue-youtube": "^1.4.0",
     "vuetify": "^2.5.5"
   },
   "devDependencies": {
