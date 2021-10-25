@@ -181,12 +181,8 @@ en:
 
 </template>
 <script>
-import carousel from 'vue-owl-carousel'
 export default {
   name: "About",
-  components: {
-    carousel
-  },
   head() {
     return {
       title: this.$t('title'),
