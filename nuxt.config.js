@@ -50,7 +50,8 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-    'nuxt-i18n'
+    'nuxt-i18n',
+    '@nuxtjs/sitemap'
   ],
   i18n: {
     locales: [
@@ -83,14 +84,25 @@ export default {
         es: '/acerca',
         en: '/about'
       },
-      market: {
-        es: '/mercado',
-        en: '/market'
+      coins: {
+        es: '/monedas',
+        en: '/coins'
       },
       courses: {
         es: '/cursos',
         en: '/courses'
       },
+    }
+  },
+
+  sitemap: {
+    hostname: 'https://lucanos.co',
+    // shortcut notation (basic)
+    i18n: true,
+    // nuxt-i18n notation (advanced)
+    i18n: {
+      locales: ['es', 'en'],
+      routesNameSeparator: '___'
     }
   },
 
@@ -121,13 +133,25 @@ export default {
   build: {
   },
   generate: {
+    // async routes () {
+    //  const { $content } = require('@nuxt/content')
+    //  const files = await $content('en/blog')
+    //    .only(['path'])
+    //    .fetch()
+
+    //  return files.map(file => (file.path === '/index' ? '/' : file.path))
+    // },
+
     async routes () {
       const { $content } = require('@nuxt/content')
-      const files = await $content('es/blog')
-        .only(['path'])
-        .fetch()
 
-      return files.map(file => (file.path === '/index' ? '/' : file.path))
-    }
+      const files = await $content({ deep: true }).only(['path']).fetch()
+
+      return files.map(
+        file => file.path.includes('/es') ? file.path.slice(3) : file.path
+      )
+    },
+
+    fallback: '404.html'
   }
 }
