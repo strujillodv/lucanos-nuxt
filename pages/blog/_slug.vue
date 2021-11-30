@@ -51,12 +51,12 @@ export default {
         {
           hid: "og:url",
           property: "og:url",
-          content: `https://lucanos/blog/${this.$route.params.slug}`,
+          content: `https://lucanos.co/blog/${this.$route.params.slug}`,
         },
         {
           hid: "twitter:url",
           name: "twitter:url",
-          content: `https://lucanos/blog/${this.$route.params.slug}`,
+          content: `https://lucanos.co/blog/${this.$route.params.slug}`,
         },
         {
           hid: "twitter:title",
@@ -71,7 +71,7 @@ export default {
         {
           hid: "twitter:image",
           name: "twitter:image",
-          content: this.post.image,
+          content: `https://lucanos.co/blog/${this.post.image}`,
         },
         {
           hid: "og:image",
@@ -102,7 +102,7 @@ export default {
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://lucanos/blog/${this.$route.params.slug}`,
+          href: `https://lucanos.co/blog/${this.$route.params.slug}`,
         },
       ],
     };
