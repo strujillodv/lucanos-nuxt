@@ -2,7 +2,7 @@
   div.slider
     div.slide-track
       div.slide(
-        v-for="(n, i) in coins"
+        v-for="(item, i) in coins"
         :key="i"
       )
         v-btn(
@@ -10,11 +10,11 @@
           small
         )
           v-avatar(tile size="20")
-            v-img(:src="n.image")
-          span &nbsp; {{ n.symbol }} - ${{ n.current_price }} -
+            v-img(:src="item.image")
+          span &nbsp; {{ item.symbol }} - ${{ item.current_price.toFixed(4) }} USD
           span(
-            :class="[ n.price_change_percentage_24h > 0 ? 'red--text' : 'green--text']"
-          ) &nbsp;{{n.price_change_percentage_24h}}%
+            :class="[ item.price_change_percentage_1h_in_currency > 0 ? 'green--text' : 'red--text']"
+          ) &nbsp;{{item.price_change_percentage_1h_in_currency.toFixed(4)}}%
 </template>
 <script>
 import { mapState } from 'vuex'
@@ -31,7 +31,7 @@ export default {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-250px * 7));
+    transform: translateX(calc(-250px * 45));
   }
 }
 
@@ -40,7 +40,7 @@ export default {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-250px * 7));
+    transform: translateX(calc(-250px * 45));
   }
 }
 .slider {
@@ -55,9 +55,9 @@ export default {
 .slider::before, .slider::after {
   background: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
   content: "";
-  height: 100px;
+  height: 30px;
   position: absolute;
-  width: 200px;
+  width: 5%;
   z-index: 2;
 }
 .slider::after {
@@ -70,13 +70,15 @@ export default {
   top: 0;
 }
 .slider .slide-track {
-  -webkit-animation: scroll 40s linear infinite;
-          animation: scroll 40s linear infinite;
+  -webkit-animation: scroll 160s linear infinite;
+          animation: scroll 160s linear infinite;
   display: flex;
-  width: calc(250px * 14);
+  width: calc(250px * 50);
 }
 .slider .slide {
-  height: 100px;
+  height: 30px;
   width: 250px;
+  display: flex;
+  justify-content: center;
 }
 </style>
