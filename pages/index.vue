@@ -243,6 +243,8 @@ en:
                 v-icon mdi-linkedin
     //- End Coachin
 
+    Allies
+
     //- Video 2
     v-container(
       class="grey darken-4"
