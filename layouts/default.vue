@@ -18,28 +18,29 @@ es:
       icon: "youtube"
       link: "videos"
     5:
-      name: "Mercado"
+      name: "Monedas"
       icon: "currency-btc"
-      link: "mercado"
+      link: "monedas"
     6:
       name: "Cursos"
       icon: "school"
       link: "cursos"
+    7:
+      name: "Conferencias"
+      icon: "account-supervisor-circle"
+      link: "conferencias"
 en:
   menu:
     1:
       name: "Services"
-      emoji: "💁"
       icon: "briefcase"
       link: "en/services"
     2:
       name: "About"
-      emoji: "✨"
       icon: "creation"
       link: "en/about"
     3:
       name: "Blog"
-      emoji: "💡"
       icon: "application-edit"
       link: "en/blog"
     4:
@@ -47,13 +48,17 @@ en:
       icon: "youtube"
       link: "en/videos"
     5:
-      name: "Market"
+      name: "Coins"
       icon: "currency-btc"
-      link: "en/market"
+      link: "en/coins"
     6:
       name: "Courses"
       icon: "school"
       link: "en/courses"
+    7:
+      name: "Conferences"
+      icon: "account-supervisor-circle"
+      link: "conferences"
 </i18n>
 <template lang="pug">
   v-app
@@ -88,7 +93,6 @@ en:
 
     //- Header
     Header(
-      :menu="$t('menu')"
       @click="drawerToogle"
     )
     //- End Header
@@ -101,60 +105,61 @@ en:
         CarouselCrypto
         Nuxt
 
-    //- End Container
+      //- End Container
 
+      Newsleter
 
-    v-footer.mb-14.mb-md-0(
-      class="grey darken-4 white--text"
-    )
-      v-card(
-        outlined
-        tile
-        width="100%"
-        class="grey darken-4 text-center white--text"
+      v-footer.mb-14.mb-md-0(
+        class="grey darken-4 white--text"
       )
-        v-card-actions.justify-center
-          v-btn(
-            text
-            class="white--text"
-            rel="noreferrer"
-            target="_blank"
-            href="https://twitter.com/_lucanos"
-            color="transparent"
-            elevation="0"
-            value="twitter"
-          )
-            v-icon mdi-twitter
-            | Twitter
-          v-btn(
-            text
-            class="white--text"
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.facebook.com/Lucanos-107479854984571"
-            color="transparent"
-            elevation="0"
-            value="facebook"
-          )
-            v-icon  mdi-facebook
-            | Faceboock
-          v-btn(
-            text
-            class="white--text"
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.instagram.com/lucanos_/"
-            color="transparent"
-            elevation="0"
-            value="instagram"
-          )
-            v-icon mdi-instagram
-            | Instagram
+        v-card(
+          outlined
+          tile
+          width="100%"
+          class="grey darken-4 text-center white--text"
+        )
+          v-card-actions.justify-center
+            v-btn(
+              text
+              class="white--text"
+              rel="noreferrer"
+              target="_blank"
+              href="https://twitter.com/_lucanos"
+              color="transparent"
+              elevation="0"
+              value="twitter"
+            )
+              v-icon mdi-twitter
+              | Twitter
+            v-btn(
+              text
+              class="white--text"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.facebook.com/Lucanos-107479854984571"
+              color="transparent"
+              elevation="0"
+              value="facebook"
+            )
+              v-icon  mdi-facebook
+              | Faceboock
+            v-btn(
+              text
+              class="white--text"
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.instagram.com/lucanos_/"
+              color="transparent"
+              elevation="0"
+              value="instagram"
+            )
+              v-icon mdi-instagram
+              | Instagram
 
-        v-divider
+          v-divider
 
-        v-card-text( class="white--text")
-          | {{ new Date().getFullYear() }} — <strong>LuCanos</strong>
+          v-card-text( class="white--text")
+            | {{ new Date().getFullYear() }} — <strong>LuCanos</strong>
 
     //- BottomNav(
     //-   :menu="$t('menu')"
