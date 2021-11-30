@@ -92,6 +92,10 @@ export default {
         es: '/cursos',
         en: '/courses'
       },
+      conferences: {
+        es: '/conferencias',
+        en: '/conferences'
+      }
     }
   },
 
