@@ -1,19 +1,33 @@
 <template lang="pug">
-  section
+  section.my-12
     v-row(
-        style="z-index: 1;"
         no-gutters
         aling="center"
       )
         v-col(
-          class="col-10 col-sm-4  d-flex justify-center"
+          class="col-12 d-flex justify-center"
+        )
+          h1.text-h3 {{title}}
+        v-col(
+          class="col-12 col-md-5  d-flex justify-center justify-md-end"
         )
           lottie-vue-player(
-            style="max-width: 290px;"
+            style="max-width: 350px;"
             src="/lottie/newsletter.json"
           )
         v-col(
-          class="col-12 col-sm-6 offset-sm-1 d-flex justify-center align-self-center"
+          class="col-12 col-md-6 d-flex justify-center align-self-center"
           aling="center"
         )
+          FormMailchimp
 </template>
+<script>
+export default {
+  props:{
+    title:{
+      type: String,
+      default: "Suscribete y mantente informado"
+    }
+  }
+}
+</script>
