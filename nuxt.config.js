@@ -102,7 +102,7 @@ export default {
   sitemap: {
     hostname: 'https://lucanos.co',
     // shortcut notation (basic)
-    //i18n: true,
+    // i18n: true,
     // nuxt-i18n notation (advanced)
     i18n: {
       locales: ['es', 'en'],
