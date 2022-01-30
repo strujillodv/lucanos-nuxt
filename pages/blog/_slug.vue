@@ -18,8 +18,9 @@ en:
 <script>
 export default {
   name: 'Post',
-  async asyncData ({ app, params }) {
+  async asyncData ({ axios, app, params }) {
     const post = await app.$content(app.i18n.locale + '/blog', params.slug).fetch()
+
     return {
       post
     }

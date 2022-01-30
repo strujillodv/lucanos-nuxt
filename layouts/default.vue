@@ -66,6 +66,8 @@ en:
     v-navigation-drawer(
       app
       v-model="drawer"
+      temporary
+      width="100%"
       right
     )
       v-app-bar(

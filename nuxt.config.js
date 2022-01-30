@@ -12,7 +12,6 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -53,6 +52,7 @@ export default {
     'nuxt-i18n',
     '@nuxtjs/sitemap'
   ],
+
   i18n: {
     locales: [
       {
@@ -119,8 +119,10 @@ export default {
       fileName: 'icon-lucanos.png'
     },
     manifest: {
-      name: '',
+      name: 'lucanos',
+      description: 'Empresa dedicada a enseñar sobre las diferentes aplicaciones de la tecnología blockchain y como su impacto esta haciendo historia',
       display: 'standalone',
+      background_color: '#1976D2',
 
     }
   },
@@ -130,21 +132,13 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/variables.scss']
+    customVariables: ['~/assets/variables.scss'],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
   generate: {
-    // async routes () {
-    //  const { $content } = require('@nuxt/content')
-    //  const files = await $content('en/blog')
-    //    .only(['path'])
-    //    .fetch()
-
-    //  return files.map(file => (file.path === '/index' ? '/' : file.path))
-    // },
 
     async routes () {
       const { $content } = require('@nuxt/content')
