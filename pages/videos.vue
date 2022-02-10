@@ -1,17 +1,31 @@
 <template lang="pug">
   v-container
     section.videos-container
-      v-skeleton-loader(
+      v-card(
         v-for="(item, index) in videos"
         :key="index"
-        type="image"
         :loading="skeleton"
+        style="overflow: hidden;"
+        flat
       )
-        youtube(
-          height="150"
-          width="100%"
-          :video-id="item.id.videoId"
+        <template slot="progress">
+          v-progress-linear(
+            color="deep-purple"
+            height="10"
+            indeterminate
+          )
+        </template>
+
+        videoDialog(
+          :img="item.snippet.thumbnails.medium.url"
+          :alt="item.snippet.title"
+          :videoId="item.id.videoId"
         )
+
+        v-card-text(
+          class="mx-0 my-0 px-0 pt-0"
+        ) {{item.snippet.title}}
+
 </template>
 <script>
 import { mapState } from 'vuex'
