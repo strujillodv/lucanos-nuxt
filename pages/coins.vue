@@ -51,7 +51,7 @@ en:
     v-parallax(
       tag="header"
       src="/img/stack-money-coin-with-trading-graph.jpg"
-      height="200"
+
     )
       div.continer-hero
       v-row(
@@ -62,8 +62,38 @@ en:
       )
         h1.text-h2.text-md-h1 {{$t('title')}}
     v-container.fluid
-      v-card
+
+      v-container
+        v-row(
+          no-gutters
+          aling="center"
+        )
+          v-col.my-4(
+            class="col-12"
+          )
+            h2(
+              class="text-center text-xs-h4 text-md-h3"
+            )
+              | Indice Fear and Greed
+          v-col.my-4.d-flex.align-self-center(
+            justify="center"
+            class="col-12 col-sm-6"
+          )
+
+            <img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" style="max-width: 100%; max-width: 400px; margin: auto;" />
+
+          v-col.my-4.align-self-center(
+            class="col-12 col-sm-6"
+          )
+            p El índice “Fear and Greed” es una herramienta que analiza varias fuentes de información para enseñar el sentimiento hacia Bitcoin y arroja el resultado en una escala que va del 0 (rojo, miedo) al 100 (verde, codicia)
+            p Cuando el mercado está generalmente en la zona de miedo puede significar que bitcoin esta subvalorado y es buen momento para comprar.
+            p Cuando el mercado está en codicia, se interpreta como esta sobrevalorado y es una señal de venta
+            p Este indicador se basa en varios factores como: la volatilidad del mercado, el volumen de trading, el sentimiento general en redes sociales, el dominio de Bitcoin relativo a otras criptos, etc.
+
+      v-card(flat)
+
         v-card-title
+
           v-text-field(
             v-model="search"
             append-icon="mdi-magnify"
@@ -93,15 +123,18 @@ en:
 
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 export default {
   data: () => ({
-    search: ''
+    search: '',
   }),
   computed: {
     coins() {
       return this.searchCoin(this.search)
     },
+    ...mapState({
+      valueFear: state => state.crypto.fear
+    }),
     ...mapGetters({
       searchCoin: 'crypto/search'
     })
