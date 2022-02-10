@@ -8,6 +8,7 @@
         v-btn(
           text
           small
+          to="/monedas"
         )
           v-avatar(tile size="20")
             v-img(:src="item.image")
@@ -44,8 +45,7 @@ export default {
   }
 }
 .slider {
-  background: white;
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  background: transparent;
   height: 30px;
   margin: auto;
   overflow: hidden;

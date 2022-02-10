@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.my-12
+  section.py-10
     v-row(
         no-gutters
         aling="center"
