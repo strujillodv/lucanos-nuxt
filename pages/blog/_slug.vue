@@ -11,9 +11,10 @@ en:
         v-img.my-4(
           :src="post.image"
         )
+      section.px-4
         h1.display-2.my-10 {{post.title}}
-      h2.text-subtitle-1.text--secondary {{$t('posted-on')}} {{ new Date(post.createdAt).toLocaleDateString()}}
-      nuxt-content.my-4.body-1(:document="post")
+        h2.text-subtitle-1.text--secondary {{$t('posted-on')}} {{ new Date(post.createdAt).toLocaleDateString()}}
+        nuxt-content.body-1(:document="post")
 </template>
 <script>
 export default {
@@ -55,6 +56,11 @@ export default {
           content: `https://lucanos.co/blog/${this.$route.params.slug}`,
         },
         {
+          hid: "og:image",
+          property: "og:image",
+          content: `${this.post.image}`,
+        },
+        {
           hid: "twitter:url",
           name: "twitter:url",
           content: `https://lucanos.co/blog/${this.$route.params.slug}`,
@@ -72,12 +78,7 @@ export default {
         {
           hid: "twitter:image",
           name: "twitter:image",
-          content: `https://lucanos.co/blog/${this.post.image}`,
-        },
-        {
-          hid: "og:image",
-          property: "og:image",
-          content: this.post.image,
+          content: `${this.post.image}`,
         },
         {
           property: "article:published_time",
@@ -91,13 +92,13 @@ export default {
           property: "article:tag",
           content: this.post.tags ? this.post.tags.toString() : "",
         },
-        { name: "twitter:label1", content: "Written by" },
-        { name: "twitter:data1", content: "Bob Ross" },
-        { name: "twitter:label2", content: "Filed under" },
-        {
-          name: "twitter:data2",
-          content: this.post.tags ? this.post.tags.toString() : "",
-        },
+        // { name: "twitter:label1", content: "Written by" },
+        // { name: "twitter:data1", content: "Bob Ross" },
+        // { name: "twitter:label2", content: "Filed under" },
+        // {
+        //   name: "twitter:data2",
+        //   content: this.post.tags ? this.post.tags.toString() : "",
+        // },
       ],
       link: [
         {
