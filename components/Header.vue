@@ -4,15 +4,20 @@
     class="pl-md-10 pr-md-10"
     app
     hide-on-scroll
-    flat
     fixed
+    height="80"
+    color="white"
+
   )
+    <template v-slot:extension>
+      CarouselCrypto
+    </template>
+
     nuxt-link( :to="(this.$i18n.locale === 'es') ? '/' : '/' + this.$i18n.locale")
       v-img(
         contain
         position="left center"
-        max-height="48"
-        max-width="200"
+        max-width="180"
         alt="Lucanos el mundo que esperas"
         :src="require('@/assets/img/logo.svg')"
       )
@@ -47,3 +52,12 @@ export default {
   }
 }
 </script>
+<style>
+.v-toolbar__extension {
+  padding: 0 !important;
+  margin: 0 !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+</style>
