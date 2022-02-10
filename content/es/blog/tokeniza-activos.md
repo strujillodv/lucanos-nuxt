@@ -1,7 +1,7 @@
 ---
 title: 🏢 Tokeniza Activos
 description: La mayoría de blockchain están diseñados como bases de datos descentralizados que funciona como libros contables que se organizan en una secuencia cronológica y se vinculan mediante pruebas criptográficas
-image: /img/blog/digital-increasing.webp
+image: https://siasky.net/_AQ0NGsDDRbCL5-bhBtdQVBnohnKGYHLs9NtiVwIAL72Ug
 published: true
 ---
 La mayoría de blockchain están diseñados como bases de datos descentralizados que funciona como libros contables que se organizan en una secuencia cronológica y se vinculan mediante pruebas criptográficas 

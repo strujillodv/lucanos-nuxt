@@ -1,7 +1,7 @@
 ---
 title: 💸 Defi - Finanzas descentralizadas
 description: En todo el ecosistema cripto, existen diferentes usos para muchas soluciones blockchain que están creadas y otras que vienen en camino, algunos ejemplos son los video juegos, NFT, cadenas de suministro, Defi.
-image: /img/blog/defi-blog.webp
+image: https://siasky.net/jAAnKjAyc9PzBZ56Q7Zg-yTDsSGzvB5EMxZvnDxGFw2OhA
 published: true
 ---
 
@@ -15,4 +15,4 @@ El funcionamiento es simple, como ya expliqué existen dos participantes en este
 Es muy parecido a cuando una persona deja un inmueble propio en garantía por un crédito que oscila entre el 60 y 70% del valor del inmueble. En el ejemplo anterior el Bitcoin sería el inmueble.
 La siguiente grafica explica el ciclo de la operación.
 
-![Defi](/img/blog/defi-1.webp)
+![Defi](https://siasky.net/OAAnqarrg2PNx8SAuL_keoQtOhG2IKzKBbpX7TpJFpr7qw)

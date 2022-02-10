@@ -1,7 +1,7 @@
 ---
 title: 🏫 Tokenización de bienes raíces
 description: Los bienes raíces siempre se han considerado una inversión segura. El problema es que, en las últimas décadas, se ha vuelto cada vez más difícil de obtener para el inversor minorista promedio. La barrera de entrada se ha vuelto excesivamente alta porque los salarios no han aumentado al mismo ritmo que los valores inmobiliarios.
-image: /img/blog/view-business-team.webp
+image: https://siasky.net/_A7pDMkyeNTyNztCptz7WRkJSfBIKmGoymtIk4sw3_BIbA
 published: true
 ---
 

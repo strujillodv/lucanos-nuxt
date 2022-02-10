@@ -1,5 +1,5 @@
 ---
-title: 🎮 NTF y GamesPlay to Earn
+title: 🎮 NTF y Games Play to Earn
 description: Games have always been accompanied by different technological advances, an example of this we have with the classic Pong that emerged in the 70s which was inspired by table tennis and became one of the first that covered a great popularity in early video game consoles; This game gave infinite fun to the first gamers and gave the initial step for the take-off of the industry.
 image: /img/blog/videogamer.webp
 published: true

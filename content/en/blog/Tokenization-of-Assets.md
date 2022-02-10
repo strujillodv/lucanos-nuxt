@@ -1,5 +1,5 @@
 ---
-title: 🏢 Tokeniza Assets
+title: 🏢 Tokenization of Assets
 description: Most blockchains are designed as decentralized databases that function like ledgers that are organized in a chronological sequence and linked by cryptographic evidence.
 image: /img/blog/digital-increasing.webp
 published: true
