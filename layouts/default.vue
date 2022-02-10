@@ -3,67 +3,84 @@ es:
   menu:
     1:
       name: "Servicios"
-      icon: "briefcase"
+      icon: "img/menu/services.webp"
       link: "servicios"
     2:
       name: "Acerca"
-      icon: "creation"
+      icon: "img/menu/about.webp"
       link: "acerca"
     3:
       name: "Blog"
-      icon: "application-edit"
+      icon: "img/menu/blog.webp"
       link: "blog"
     4:
       name: "Videos"
-      icon: "youtube"
+      icon: "img/menu/videos.webp"
       link: "videos"
     5:
       name: "Monedas"
-      icon: "currency-btc"
+      icon: "img/menu/coins.webp"
       link: "monedas"
     6:
       name: "Cursos"
-      icon: "school"
+      icon: "img/menu/learning.webp"
       link: "cursos"
     7:
       name: "Conferencias"
-      icon: "account-supervisor-circle"
+      icon: "img/menu/conferences.webp"
       link: "conferencias"
+    8:
+      name: "Curiosides"
+      icon: "img/menu/curiosities.webp"
+      link: "curiosidades"
+    9:
+      name: "Podcast"
+      icon: "img/menu/podcast.webp"
+      link: "podcast"
 en:
   menu:
     1:
       name: "Services"
-      icon: "briefcase"
+      icon: "img/menu/services.webp"
       link: "en/services"
     2:
       name: "About"
-      icon: "creation"
+      icon: "img/menu/about.webp"
       link: "en/about"
     3:
       name: "Blog"
-      icon: "application-edit"
+      icon: "img/menu/blog.webp"
       link: "en/blog"
     4:
       name: "Videos"
-      icon: "youtube"
+      icon: "img/menu/videos.webp"
       link: "en/videos"
     5:
       name: "Coins"
-      icon: "currency-btc"
+      icon: "img/menu/coins.webp"
       link: "en/coins"
     6:
       name: "Courses"
-      icon: "school"
+      icon: "img/menu/learning.webp"
       link: "en/courses"
     7:
       name: "Conferences"
-      icon: "account-supervisor-circle"
+      icon: "img/menu/conferences.webp"
       link: "conferences"
+    8:
+      name: "Curiosities"
+      icon: "img/menu/curiosities.webp"
+      link: "curiosities"
+    9:
+      name: "Podcast"
+      icon: "img/menu/podcast.webp"
+      link: "podcast"
 </i18n>
 <template lang="pug">
   v-app
 
     v-navigation-drawer(
+      fixed
       app
       v-model="drawer"
       temporary
@@ -80,18 +97,36 @@ en:
           @click="drawer=!drawer"
         )
           v-icon mdi-close
-      v-list
-        v-list-item-group
-          v-list-item(
-            v-for="(item, index) in $t('menu')"
-            :key="index"
-            nuxt
-            :to="'/'+  item.link"
+
+      v-item-group( active-class="primary" )
+        v-container
+          v-col.offset-md-3(
+            cols="12"
+            md="6"
           )
-            v-list-item-icon
-              v-icon mdi-{{item.icon}}
-            v-list-item-content
-              v-list-item-title {{item.name}}
+            v-row
+              v-col(
+                cols="6"
+                md="4"
+                v-for="(item, index) in $t('menu')"
+                :key="index"
+              )
+                v-item
+                  v-card(
+                    flat
+                    nuxt
+                    :to="'/'+  item.link"
+                  )
+                    v-img(
+                      :src="item.icon"
+                      class="white--text align-end"
+                      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.6)"
+                      height="100px"
+                    )
+                      <v-card-title v-text="item.name"></v-card-title>
+              v-col(cols="12")
+                SocialButtons.mx-auto
+
 
     //- Header
     Header(
@@ -104,7 +139,7 @@ en:
       v-container.pa-0(
         fluid
       )
-        CarouselCrypto
+
         Nuxt
 
       //- End Container
