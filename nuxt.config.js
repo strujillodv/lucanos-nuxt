@@ -92,9 +92,17 @@ export default {
         es: '/cursos',
         en: '/courses'
       },
+      podcast: {
+        es: '/podcast',
+        en: '/podcast'
+      },
       conferences: {
         es: '/conferencias',
         en: '/conferences'
+      },
+      curiosities: {
+        es: '/curiosidades',
+        en: '/curiosities'
       }
     }
   },
