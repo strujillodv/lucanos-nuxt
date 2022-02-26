@@ -18,6 +18,7 @@
 </template>
 <style>
 .snew {
+  width: 100%;
   position: relative;
 }
 .snew::before {
