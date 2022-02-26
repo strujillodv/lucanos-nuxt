@@ -12,10 +12,10 @@
         )
           v-avatar(tile size="20")
             v-img(:src="item.image")
-          span &nbsp; {{ item.symbol }} - ${{ item.current_price.toFixed(4) }} USD
+          span &nbsp; {{ item.symbol }} - ${{ (item.current_price * 1).toFixed(4) }} USD
           span(
-            :class="[ item.price_change_percentage_1h_in_currency > 0 ? 'green--text' : 'red--text']"
-          ) &nbsp;{{item.price_change_percentage_1h_in_currency.toFixed(4)}}%
+            :class="[ (item.price_change_percentage_1h_in_currency * 1) > 0 ? 'green--text' : 'red--text']"
+          ) &nbsp;{{(item.price_change_percentage_1h_in_currency * 1).toFixed(4)}}%
 </template>
 <script>
 import { mapState } from 'vuex'
