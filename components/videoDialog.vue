@@ -9,13 +9,19 @@
       template(
         v-slot:activator="{ on, attrs }"
       )
-        v-img.my-6(
-          max-width="700"
-          v-bind="attrs"
-          v-on="on"
-          :src="img"
-          :alt="alt"
-        )
+        div.videoyt-container
+          v-img.py-4.videoyt-container-video(
+            :src="img"
+            :alt="alt"
+          )
+          div.videoyt-container-button
+            v-btn.videoyt-container-button-active(
+              v-bind="attrs"
+              v-on="on"
+              fab
+            )
+              v-icon mdi-play
+
 
       v-card(
         flat
@@ -73,3 +79,49 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.videoyt-container {
+  position: relative;
+  overflow: hidden;
+
+  &-video {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    transition: transform .25s ease;
+  }
+
+  &-button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.57);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+
+    &-active {
+      transform: scale(0);
+      transition: transform .25s ease;
+    }
+
+  }
+  &:hover {
+    .videoyt-container-video {
+      transform: scale(1.5);
+    }
+    .videoyt-container-button {
+      opacity: 1;
+    }
+    .videoyt-container-button-active  {
+      transform: scale(1.2);
+    }
+
+  }
+}
+</style>
