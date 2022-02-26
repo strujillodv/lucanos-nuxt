@@ -86,6 +86,7 @@ en:
       temporary
       width="100%"
       right
+      style="z-index:1000;"
     )
       v-app-bar(
         flat
@@ -235,6 +236,7 @@ export default {
   },
   created() {
     this.$store.dispatch('crypto/getCoins')
+    this.$store.dispatch('crypto/getIndex')
     this.$store.dispatch('youtube/getVideos')
   },
   methods: {
