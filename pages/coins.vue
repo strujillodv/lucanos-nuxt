@@ -82,8 +82,31 @@ en:
 
             <img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" style="max-width: 100%; max-width: 400px; margin: auto;" />
 
-          v-col.my-4.align-self-center(
+          v-col.my-4.d-flex.align-self-center(
+            justify="center"
             class="col-12 col-sm-6"
+          )
+
+            v-list(
+              max-width="500"
+              width="100%"
+            )
+              v-list-item(
+                v-for="(item, index) in indexBlockchain" :key="index"
+              )
+                v-list-item-content
+                  v-list-item-title {{labels[index]}}
+                  v-list-item-subtitle.headline(
+                    :class="colorChange(item.value_classification) + '--text'"
+                  ) {{item.value_classification}}
+                v-list-item-avatar
+                  v-avatar(
+                    :color="colorChange(item.value_classification) + ' darken-1'"
+                    size="56"
+                  ) {{ item.value }}
+
+          v-col.my-4.align-self-center(
+            class="col-12 col-sm-12"
           )
             p El índice “Fear and Greed” es una herramienta que analiza varias fuentes de información para enseñar el sentimiento hacia Bitcoin y arroja el resultado en una escala que va del 0 (rojo, miedo) al 100 (verde, codicia)
             p Cuando el mercado está generalmente en la zona de miedo puede significar que bitcoin esta subvalorado y es buen momento para comprar.
@@ -127,13 +150,20 @@ import { mapGetters, mapState } from 'vuex'
 export default {
   data: () => ({
     search: '',
+    labels:[
+      'Now',
+      'Yesterday',
+      'Last week',
+      'Last month'
+    ],
   }),
   computed: {
     coins() {
       return this.searchCoin(this.search)
     },
     ...mapState({
-      valueFear: state => state.crypto.fear
+      valueFear: state => state.crypto.fear,
+      'indexBlockchain': state => state.crypto.index
     }),
     ...mapGetters({
       searchCoin: 'crypto/search'
@@ -144,6 +174,27 @@ export default {
       this.searchCoin(this.search)
 
     },
+    colorChange(value) {
+      let colorElement = 'yellow'
+      switch (value) {
+        case 'neutral':
+          colorElement = 'yellow'
+          break
+        case 'Fear':
+          colorElement = 'amber'
+          break
+        case 'Extreme Fear':
+          colorElement = 'orange'
+          break
+        case 'Greed':
+          colorElement = 'light-green'
+          break
+        case 'Extreme Greed':
+          colorElement = 'green'
+          break
+      }
+      return colorElement
+    }
   },
 }
 </script>
