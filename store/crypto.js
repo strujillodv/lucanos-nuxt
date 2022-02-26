@@ -1,12 +1,20 @@
 import axios from 'axios'
 
 export const state = () => ({
-  coins: []
+  coins: [],
+  index: []
 })
 
 export const mutations = {
   addData(state, dataCoins) {
     state.coins = dataCoins
+  },
+  addIndex(state, dataIndex) {
+
+    dataIndex.splice(2, 5);
+    dataIndex.splice(3, 22);
+
+    state.index = dataIndex
   }
 }
 export const getters = {
@@ -31,6 +39,14 @@ export const actions = {
       .get(url)
       .then(response => {
         commit('addData', response.data)
+    })
+  },
+  getIndex ({ commit }) {
+    const url = 'https://api.alternative.me/fng/?limit=31'
+    axios
+      .get(url)
+      .then(response => {
+        commit('addIndex', response.data.data)
     })
   }
 }
