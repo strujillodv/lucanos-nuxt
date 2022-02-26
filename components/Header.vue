@@ -7,7 +7,7 @@
     fixed
     height="80"
     color="white"
-
+    style="z-index: 100;"
   )
     <template v-slot:extension>
       CarouselCrypto
