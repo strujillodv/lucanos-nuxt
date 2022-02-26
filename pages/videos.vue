@@ -11,7 +11,7 @@
         <template slot="progress">
           v-progress-linear(
             color="deep-purple"
-            height="10"
+            height="3"
             indeterminate
           )
         </template>
@@ -23,7 +23,7 @@
         )
 
         v-card-text(
-          class="mx-0 my-0 px-0 pt-0"
+          class="mx-0 px-0"
         ) {{item.snippet.title}}
 
 </template>
