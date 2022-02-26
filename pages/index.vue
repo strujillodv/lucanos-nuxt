@@ -23,7 +23,10 @@ en:
   description: "Company dedicated to teaching about the different applications of blockchain technology and how its impact is making history"
 </i18n>
 <template lang="pug">
-  section
+  v-container.px-0(
+    fluid
+    style="overflow-x: hidden;"
+  )
     //- Section Hero
     homeSectionHero
     //- End Hero
@@ -32,7 +35,7 @@ en:
     homeSectionServices
     //- End Section Services
 
-    v-row(
+    v-row.mb-10(
       no-gutters
       aling="center"
     )
@@ -43,7 +46,7 @@ en:
           class="text-center text-xs-h4 text-md-h3"
         )
           | {{$t('title-2')}}
-      v-col.my-4(
+      v-col.my-10.pb-10(
         class="col-12"
       )
         v-slide-group(
@@ -58,8 +61,8 @@ en:
     //- Section Services
 
     //- Video 1
-    v-container(
-      class="grey darken-4 text-center"
+    v-container.my-10(
+      class="grey darken-4 text-center skewx"
       fluid
     )
       v-container
@@ -67,89 +70,36 @@ en:
         v-col.my-4.align-self-center(
           class="col-12  white--text"
         )
-          h3(
+          h3.py-6(
             class="text-h4 text-md-h3"
           )
             | {{$t('title-video-1')}}
-          v-card-subtitle
+          p
             | {{$t('text-video-1')}}
 
-
-          videoDialog(
-            img="/img/video1.png"
-            :alt="$t('title-video-1')"
-            videoId="JMf083F53sU"
+          v-card(
+            flat
+            color="transparent"
           )
+            v-responsive(:aspect-ratio="16/6")
+              videoDialog(
+                img="/img/video1.png"
+                :alt="$t('title-video-1')"
+                videoId="JMf083F53sU"
+              )
 
     //- End Video 1
 
-    //- Coachin
-    v-container
-      v-row(
-        no-gutters
-        aling="center"
-      )
-        v-col.my-4(
-          class="col-12"
-        )
-          h2(
-            class="text-center text-xs-h4 text-md-h3"
-          )
-            | {{$t('title-3')}}
-        v-col.my-4.align-self-center(
-          class="col-12 col-sm-6"
-        )
-          img.img-edwin.mx-auto.d-flex(
-            src="/img/edwin-cano.webp"
-            width="280"
-            height="280"
-            loading="lazy"
-            alt="Edwin Cano"
-          )
-        v-col.my-4.align-self-center(
-          class="col-12 col-sm-6"
-        )
-          v-card(flat)
-            v-card-title(
-              class="text-h4 text-md-h3"
-            )
-              | Edwin Cano
-            v-card-subtitle(
-              class="text-h5"
-            )
-              | {{$t('subtitle-3')}}
-            v-card-actions
-              v-btn(
-                rel="noreferrer"
-                target="_blank"
-                href="https://twitter.com/Canocripto"
-                icon
-                value="twitter"
-              )
-                v-icon mdi-twitter
-              v-btn(
-                rel="noreferrer"
-                target="_blank"
-                href="https://www.facebook.com/profile.php?id=518322728"
-                icon
-                value="facebook"
-              )
-                v-icon  mdi-facebook
-              v-btn(
-                rel="noreferrer"
-                target="_blank"
-                href="https://www.linkedin.com/in/edwin-cano-cofinancer/"
-                icon
-                value="linkedin"
-              )
-                v-icon mdi-linkedin
-    //- End Coachin
+
+    homeSectionMetagame.py-16
+
+    homeSectionWallets
 
     Allies
 
     //- Video 2
     v-container(
-      class="grey darken-4 text-center"
+      class="grey darken-4 text-center skewx skewx "
       fluid
     )
       v-container
@@ -157,17 +107,26 @@ en:
         v-col.my-4.align-self-center(
           class="col-12 white--text"
         )
-          h3(
+          h3.py-6(
             class="text-h4 text-md-h3"
           )
             | {{$t('title-4')}}
 
-          videoDialog(
-            img="/img/video2.png"
-            :alt="$t('title-4')"
-            videoId="3Zt2zB4QzeM"
+          v-card(
+            flat
+            color="transparent"
           )
+            v-responsive(:aspect-ratio="16/6")
+
+              videoDialog(
+                img="/img/video2.png"
+                :alt="$t('title-4')"
+                videoId="3Zt2zB4QzeM"
+              )
     //- End Video 2
+
+    homeSectionKits.py-16
+    homeSectionCarousel
 
 </template>
 <script>
@@ -271,5 +230,34 @@ export default {
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 255, 0.5);
+
+}
+.skewx {
+  position: relative;
+  z-index: 10;
+}
+.skewx::before {
+  content: "";
+  display: block;
+  width: 150%;
+  height: 150px;
+  transform: skewY(-3deg);
+  position: absolute;
+  top: -20px;
+  left: -50%;
+  z-index: -1;
+  background-color: #212121;
+}
+.skewx::after {
+  content: "";
+  display: block;
+  width: 150%;
+  height: 150px;
+  transform: skewY(-3deg);
+  position: absolute;
+  bottom: -80px;
+  left: -50%;
+  z-index: -1;
+  background-color: #212121;
 }
 </style>
